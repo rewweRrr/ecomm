@@ -2,6 +2,7 @@
 
 import { Button, TextField, useColorScheme } from '@mui/material';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { Header } from './_ui/hedaer';
 
 const API_HOST = process.env.NEXT_PUBLIC_API_HOST || 'http://localhost:3001';
 
@@ -38,6 +39,7 @@ export default function Web() {
 
   return (
     <div>
+      <Header />
       <h1>Web</h1>
       <select
         value={mode}

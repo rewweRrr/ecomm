@@ -9,7 +9,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@ecomm/ui": "*",
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -17,16 +16,16 @@
     "@mui/material": "^7.0.1",
     "@mui/material-nextjs": "^7.0.0",
     "next": "^15.2.4",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@ecomm/eslint-config": "*",
     "@ecomm/typescript-config": "*",
     "@next/eslint-plugin-next": "^15.2.4",
     "@types/node": "^22.14.0",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.1",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
     "eslint": "^9.24.0",
     "typescript": "5.8.3"
   }

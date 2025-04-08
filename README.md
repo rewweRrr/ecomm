@@ -18,7 +18,6 @@ This Turborepo includes the following:
 
 - `web`: a [Next.js](https://nextjs.org/) app
 - `api`: an [Express](https://expressjs.com/) server
-- `@ecomm/ui`: a React component library
 - `@ecomm/logger`: Isomorphic logger (a small wrapper around console.log)
 - `@ecomm/eslint-config`: ESLint presets
 - `@ecomm/typescript-config`: tsconfig.json's used throughout the monorepo
