@@ -160,3 +160,4 @@ exports
 dist
 .strapi-updater.json
 .strapi-cloud.json
+/apps/cms/types/generated
