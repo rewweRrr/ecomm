@@ -1,12 +1,14 @@
-"use client";
+'use client';
 
-import { useEffect, useState, ChangeEvent, FormEvent } from "react";
-import { Button } from "@ecomm/ui/button";
+import { Button, TextField, useColorScheme } from '@mui/material';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
-const API_HOST = process.env.NEXT_PUBLIC_API_HOST || "http://localhost:3001";
+const API_HOST = process.env.NEXT_PUBLIC_API_HOST || 'http://localhost:3001';
 
 export default function Web() {
-  const [name, setName] = useState<string>("");
+  const { mode, setMode } = useColorScheme();
+
+  const [name, setName] = useState<string>('');
   const [response, setResponse] = useState<{ message: string } | null>(null);
   const [error, setError] = useState<string | undefined>();
 
@@ -15,8 +17,7 @@ export default function Web() {
     setError(undefined);
   }, [name]);
 
-  const onChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setName(e.target.value);
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => setName(e.target.value);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,27 +28,32 @@ export default function Web() {
       setResponse(response);
     } catch (err) {
       console.error(err);
-      setError("Unable to fetch response");
+      setError('Unable to fetch response');
     }
   };
 
   const onReset = () => {
-    setName("");
+    setName('');
   };
 
   return (
     <div>
       <h1>Web</h1>
+      <select
+        value={mode}
+        onChange={event => {
+          setMode(event.target.value);
+          // For TypeScript, cast `event.target.value as 'light' | 'dark' | 'system'`:
+        }}
+      >
+        <option value='system'>System</option>
+        <option value='light'>Light</option>
+        <option value='dark'>Dark</option>
+      </select>
+
       <form onSubmit={onSubmit}>
-        <label htmlFor="name">Name </label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={name}
-          onChange={onChange}
-        ></input>
-        <Button type="submit">Submit</Button>
+        <TextField type='text' name='name' id='name' value={name} label='Name' onChange={onChange}></TextField>
+        <Button type='submit'>Submit</Button>
       </form>
       {error && (
         <div>
