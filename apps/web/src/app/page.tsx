@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, TextField, useColorScheme } from '@mui/material';
+import { Button, SupportedColorScheme, TextField, useColorScheme } from '@mui/material';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { Header } from './_ui/hedaer';
 
@@ -44,7 +44,7 @@ export default function Web() {
       <select
         value={mode}
         onChange={event => {
-          setMode(event.target.value);
+          setMode(event.target.value as SupportedColorScheme);
           // For TypeScript, cast `event.target.value as 'light' | 'dark' | 'system'`:
         }}
       >
